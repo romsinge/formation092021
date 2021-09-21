@@ -1,0 +1,13 @@
+:host {
+  display: block;
+
+  .container {
+    width: 10%;
+    position: relative;
+    left: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
