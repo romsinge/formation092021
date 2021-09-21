@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { PoneyComponent } from './components/poney/poney.component';
 import { Poney } from './models/poney.model';
 
 @Component({
@@ -7,10 +8,15 @@ import { Poney } from './models/poney.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChildren('poneyComponents') poneyComponentList: QueryList<PoneyComponent> | undefined
+
   title = 'AMBIENT IT';
 
   handleWin(poney: Poney): void {
     console.log(`GAME OVER. THE WINNER IS ${poney.name}`)
+    this.poneyComponentList?.forEach((poneyComponent: PoneyComponent) => {
+      poneyComponent.stopRunning()
+    })
   }
 
   ponies: Poney[] = [
@@ -25,6 +31,10 @@ export class AppComponent {
     {
       name: "Emile",
       image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif"
+    },
+    {
+      name: "Bertrand",
+      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-purple-running.gif"
     }
   ]
 }

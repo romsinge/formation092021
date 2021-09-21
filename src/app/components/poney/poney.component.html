@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [style.left]="(poney?.distance || 0) + '%'">
     <strong (click)="handleClick()">{{ poney?.name }}</strong>
     <img [src]="poney?.image">
 </div>
