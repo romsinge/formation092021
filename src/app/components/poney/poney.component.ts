@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Poney } from 'src/app/models/poney.model';
 
 @Component({
@@ -9,11 +9,12 @@ import { Poney } from 'src/app/models/poney.model';
 export class PoneyComponent implements OnInit {
 
   @Input() poney: Poney | null = null
+  @Output() win: EventEmitter<Poney> = new EventEmitter()
 
   constructor() {}
 
   ngOnInit(): void {
-
+    this.win.emit(this.poney as Poney)
   }
 
   handleClick() {

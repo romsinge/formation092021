@@ -9,6 +9,10 @@ import { Poney } from './models/poney.model';
 export class AppComponent {
   title = 'AMBIENT IT';
 
+  handleWin(poney: Poney): void {
+    console.log(`GAME OVER. THE WINNER IS ${poney.name}`)
+  }
+
   ponies: Poney[] = [
     {
       name: "Romain",
