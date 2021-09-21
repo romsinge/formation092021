@@ -22,19 +22,23 @@ export class AppComponent {
   ponies: Poney[] = [
     {
       name: "Romain",
-      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-green-running.gif"
+      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-green-running.gif",
+      color: "gold"
     },
     {
       name: "Yoann",
-      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-blue-running.gif"
+      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-blue-running.gif",
+      color: "rebeccapurple"
     },
     {
       name: "Emile",
-      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif"
+      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif",
+      color: "lavender"
     },
     {
       name: "Bertrand",
-      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-purple-running.gif"
+      image: "https://ng-ponyracer.ninja-squad.com/assets/images/pony-purple-running.gif",
+      color: "orangered"
     }
   ]
 }
