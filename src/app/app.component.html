@@ -1,4 +1,4 @@
-<mat-toolbar>{{ title }}</mat-toolbar>
+<mat-toolbar>{{ title }} - {{ getDate() | date:'HH:mm:ss' }}</mat-toolbar>
 
 <app-poney
     (win)="handleWin($event)"
@@ -7,3 +7,7 @@
     #poneyComponents
     [appRainbow]="poneyItem.color"
 ></app-poney>
+
+<!-- <pre>
+    {{ ponies | json }}
+</pre> -->

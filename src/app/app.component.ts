@@ -19,6 +19,10 @@ export class AppComponent {
     })
   }
 
+  getDate() {
+    return new Date()
+  }
+
   ponies: Poney[] = [
     {
       name: "Romain",
