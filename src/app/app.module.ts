@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { PoneyComponent } from './components/poney/poney.component';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
