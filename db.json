@@ -23,6 +23,12 @@
       "name": "Bertrand",
       "image": "https://ng-ponyracer.ninja-squad.com/assets/images/pony-purple-running.gif",
       "color": "orangered"
+    },
+    {
+      "name": "Jeremie",
+      "image": "https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif",
+      "color": "orange",
+      "id": "z12kwNm"
     }
   ],
   "races": [
@@ -34,7 +40,7 @@
     {
       "id": "2",
       "name": "Marseille",
-      "poneyIds": ["3", "4"]
+      "poneyIds": ["3", "4", "z12kwNm"]
     }
   ]
 }

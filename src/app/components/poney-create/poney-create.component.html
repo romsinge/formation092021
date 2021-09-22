@@ -1,1 +1,15 @@
-<p>poney-create works!</p>
+<mat-toolbar>Créer un poney</mat-toolbar>
+
+<form (submit)="handleSubmit()">
+  Name :
+  <input
+    name="name"
+    type="text"
+    [ngModel]="poney.name"
+    (ngModelChange)="poney.name = $event"
+  />
+  <br />
+  Color : <input name="color" type="text" [(ngModel)]="poney.color" />
+  <br />
+  <button type="submit">Create</button>
+</form>
