@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Race } from './models/race.model';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +9,15 @@ import { Race } from './models/race.model';
 })
 export class AppComponent {
   title = 'AMBIENT IT';
+  races: Race[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.races = this.dataService.races;
+  }
 
   getDate() {
     return new Date();
   }
-
-  races: Race[] = [
-    {
-      id: '1',
-      name: 'Paris',
-      poneyIds: ['1', '2'],
-    },
-    {
-      id: '2',
-      name: 'Marseille',
-      poneyIds: ['3', '4'],
-    },
-  ];
 }
