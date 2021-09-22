@@ -16,6 +16,10 @@ export class DataService {
     return this._ponies;
   }
 
+  getRaceById(id: string): Race | undefined {
+    return this.races.find((race) => race.id === id);
+  }
+
   private _races: Race[] = [
     {
       id: '1',

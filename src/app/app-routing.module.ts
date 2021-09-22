@@ -10,7 +10,7 @@ const routes: Routes = [
     component: RaceListComponent,
   },
   {
-    path: 'race',
+    path: 'race/:id',
     component: RaceComponent,
   },
   {

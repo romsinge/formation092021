@@ -1,4 +1,5 @@
-import { Component, Input, QueryList, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Poney } from 'src/app/models/poney.model';
 import { Race } from 'src/app/models/race.model';
 import { DataService } from 'src/app/services/data.service';
@@ -10,17 +11,24 @@ import { PoneyComponent } from '../poney/poney.component';
   styleUrls: ['./race.component.scss'],
 })
 export class RaceComponent {
-  @Input() race: Race | undefined;
   @ViewChildren('poneyComponents') poneyComponentList:
     | QueryList<PoneyComponent>
     | undefined;
 
   ponies: Poney[] = [];
+  race: Race | undefined;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.ponies = this.dataService.ponies;
+
+    this.route.params.subscribe((params) => {
+      this.race = this.dataService.getRaceById(params.id);
+    });
   }
 
   handleWin(poney: Poney): void {
