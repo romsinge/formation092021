@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Poney } from '../models/poney.model';
 import { Race } from '../models/race.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   get races(): Race[] {
     return this._races;
   }
 
-  get ponies(): Poney[] {
-    return this._ponies;
+  get ponies(): Observable<Poney[]> {
+    return this.http.get<Poney[]>('http://localhost:3000/ponies');
   }
 
   getRaceById(id: string): Race | undefined {
@@ -33,34 +35,5 @@ export class DataService {
     },
   ];
 
-  private _ponies: Poney[] = [
-    {
-      id: '1',
-      name: 'Romain',
-      image:
-        'https://ng-ponyracer.ninja-squad.com/assets/images/pony-green-running.gif',
-      color: 'gold',
-    },
-    {
-      id: '2',
-      name: 'Yoann',
-      image:
-        'https://ng-ponyracer.ninja-squad.com/assets/images/pony-blue-running.gif',
-      color: 'rebeccapurple',
-    },
-    {
-      id: '3',
-      name: 'Emile',
-      image:
-        'https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif',
-      color: 'lavender',
-    },
-    {
-      id: '4',
-      name: 'Bertrand',
-      image:
-        'https://ng-ponyracer.ninja-squad.com/assets/images/pony-purple-running.gif',
-      color: 'orangered',
-    },
-  ];
+  private _ponies: Poney[] = [];
 }

@@ -1,5 +1,6 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Poney } from 'src/app/models/poney.model';
 import { Race } from 'src/app/models/race.model';
 import { DataService } from 'src/app/services/data.service';
@@ -15,7 +16,7 @@ export class RaceComponent {
     | QueryList<PoneyComponent>
     | undefined;
 
-  ponies: Poney[] = [];
+  ponies: Observable<Poney[]> | undefined;
   race: Race | undefined;
 
   constructor(

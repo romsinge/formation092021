@@ -5,7 +5,7 @@ import { Poney } from '../models/poney.model';
   name: 'racing',
 })
 export class RacingPipe implements PipeTransform {
-  transform(ponies: Poney[], poneyIds: string[] = []): Poney[] {
-    return ponies.filter((poney) => poneyIds.includes(poney?.id || ''));
+  transform(ponies: Poney[] | null, poneyIds: string[] = []): Poney[] {
+    return ponies?.filter((poney) => poneyIds.includes(poney?.id || '')) || [];
   }
 }
