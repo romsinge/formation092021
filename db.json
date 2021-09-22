@@ -25,5 +25,16 @@
       "color": "orangered"
     }
   ],
-  "races": []
+  "races": [
+    {
+      "id": "1",
+      "name": "Paris",
+      "poneyIds": ["1", "2"]
+    },
+    {
+      "id": "2",
+      "name": "Marseille",
+      "poneyIds": ["3", "4"]
+    }
+  ]
 }

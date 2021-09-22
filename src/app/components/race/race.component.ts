@@ -17,7 +17,7 @@ export class RaceComponent {
     | undefined;
 
   ponies: Observable<Poney[]> | undefined;
-  race: Race | undefined;
+  race: Observable<Race | undefined> | undefined;
 
   constructor(
     private dataService: DataService,

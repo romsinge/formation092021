@@ -1,9 +1,11 @@
-<mat-toolbar>{{ race?.name }}</mat-toolbar>
+<ng-container *ngIf="race | async as raceData">
+  <mat-toolbar>{{ raceData?.name }}</mat-toolbar>
 
-<app-poney
-  (win)="handleWin($event)"
-  [poney]="poneyItem"
-  *ngFor="let poneyItem of ponies | async | racing: race?.poneyIds"
-  #poneyComponents
-  [appRainbow]="poneyItem.color"
-></app-poney>
+  <app-poney
+    (win)="handleWin($event)"
+    [poney]="poneyItem"
+    *ngFor="let poneyItem of ponies | async | racing: raceData?.poneyIds"
+    #poneyComponents
+    [appRainbow]="poneyItem.color"
+  ></app-poney>
+</ng-container>
