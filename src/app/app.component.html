@@ -1,5 +1,10 @@
 <mat-toolbar>{{ title }} - {{ getDate() | date: "HH:mm:ss" }}</mat-toolbar>
 
+<nav>
+  <button routerLink="/">Race list</button>
+  <button routerLink="/poney-create">Create poney</button>
+</nav>
+
 <router-outlet></router-outlet>
 
 <!-- <pre>
