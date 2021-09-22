@@ -1,6 +1,6 @@
 <mat-toolbar>{{ title }} - {{ getDate() | date: "HH:mm:ss" }}</mat-toolbar>
 
-<amb-race *ngFor="let raceItem of races" [race]="raceItem"></amb-race>
+<router-outlet></router-outlet>
 
 <!-- <pre>
     {{ ponies | json }}

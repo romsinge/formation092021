@@ -9,6 +9,9 @@ import { MaterialModule } from './modules/material/material.module';
 import { UnitPipe } from './pipes/unit.pipe';
 import { RaceComponent } from './components/race/race.component';
 import { RacingPipe } from './pipes/racing.pipe';
+import { RaceListComponent } from './components/race-list/race-list.component';
+import { PoneyCreateComponent } from './components/poney-create/poney-create.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { RacingPipe } from './pipes/racing.pipe';
     RainbowDirective,
     UnitPipe,
     RaceComponent,
-    RacingPipe
+    RacingPipe,
+    RaceListComponent,
+    PoneyCreateComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
