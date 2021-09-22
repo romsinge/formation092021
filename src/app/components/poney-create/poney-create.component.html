@@ -1,6 +1,24 @@
 <mat-toolbar>Créer un poney</mat-toolbar>
 
-<form (submit)="handleSubmit()">
+<form (submit)="handleSubmit()" [formGroup]="poneyForm">
+  Name :
+  <input type="text" formControlName="name" />
+  <span
+    style="color: red"
+    *ngIf="
+      poneyForm.controls.name.hasError('required') &&
+      poneyForm.controls.name.touched
+    "
+  >
+    Ce champ est requis
+  </span>
+  <br />
+  Color : <input type="text" formControlName="color" />
+  <br />
+  <button type="submit" [disabled]="poneyForm.invalid">Create</button>
+</form>
+
+<!-- <form (submit)="handleSubmit()">
   Name :
   <input
     name="name"
@@ -12,4 +30,4 @@
   Color : <input name="color" type="text" [(ngModel)]="poney.color" />
   <br />
   <button type="submit">Create</button>
-</form>
+</form> -->

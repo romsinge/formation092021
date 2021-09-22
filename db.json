@@ -29,18 +29,31 @@
       "image": "https://ng-ponyracer.ninja-squad.com/assets/images/pony-orange-running.gif",
       "color": "orange",
       "id": "z12kwNm"
+    },
+    {
+      "name": "Patrick",
+      "color": "green",
+      "image": "https://ng-ponyracer.ninja-squad.com/assets/images/pony--running.gif",
+      "id": "iTNj9iw"
     }
   ],
   "races": [
     {
       "id": "1",
       "name": "Paris",
-      "poneyIds": ["1", "2"]
+      "poneyIds": [
+        "1",
+        "2"
+      ]
     },
     {
       "id": "2",
       "name": "Marseille",
-      "poneyIds": ["3", "4", "z12kwNm"]
+      "poneyIds": [
+        "3",
+        "4",
+        "z12kwNm"
+      ]
     }
   ]
 }
