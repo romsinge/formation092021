@@ -1,14 +1,8 @@
 <div class="container" [style.left]="poney?.distance | unit">
-    <strong (click)="handleClick()">{{ poney?.name }}</strong>
-    <img [src]="poney?.image">
+  <strong (click)="handleClick()">{{ poney?.name }}</strong>
+  <img [src]="poney?.image" />
 </div>
 
 <!-- BUT ULTIME : Afficher plusieurs courses -->
-<!-- 1. Créer le composant RaceComponent -->
-<!-- 2. Déplacer tout depuis AppComponent vers RaceComponent -->
-<!-- 3. Créer le type Race {id?: string; name: string; poneyIds: string[]} 
-    (ex: {id: '1', name: 'Paris', poneyIds: ['1', '2']}) --> 
-<!-- 4. Créer un tableau races: Race[] dans AppComponent -->
-<!-- 5. Afficher autant de RaceComponent dans AppComponent qu'il y a de Race -->
 <!-- 6. Créer un pipe qui permettra de filtrer les poneys à afficher 
     dans la course (ex: *ngFor="let poneyItem of ponies | racing:race.poneyIds") -->

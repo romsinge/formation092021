@@ -1,12 +1,6 @@
-<mat-toolbar>{{ title }} - {{ getDate() | date:'HH:mm:ss' }}</mat-toolbar>
+<mat-toolbar>{{ title }} - {{ getDate() | date: "HH:mm:ss" }}</mat-toolbar>
 
-<app-poney
-    (win)="handleWin($event)"
-    [poney]="poneyItem"
-    *ngFor="let poneyItem of ponies"
-    #poneyComponents
-    [appRainbow]="poneyItem.color"
-></app-poney>
+<amb-race *ngFor="let raceItem of races" [race]="raceItem"></amb-race>
 
 <!-- <pre>
     {{ ponies | json }}

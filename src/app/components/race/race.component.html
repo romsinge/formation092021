@@ -1,0 +1,9 @@
+<mat-toolbar>{{ race?.name }}</mat-toolbar>
+
+<app-poney
+  (win)="handleWin($event)"
+  [poney]="poneyItem"
+  *ngFor="let poneyItem of ponies | racing: race?.poneyIds"
+  #poneyComponents
+  [appRainbow]="poneyItem.color"
+></app-poney>
